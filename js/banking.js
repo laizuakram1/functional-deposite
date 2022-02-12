@@ -16,11 +16,19 @@ function inputTotal(inputId, amount){
     depositTotal.innerText = depositTotalBalance;
     return depositTotalBalance;
 };
+//  // current balance function 
+//     function currentBalance(){
+//         const totalBalance = document.getElementById(id);
+//         const totalBalancePrevious = parseFloat(totalBalance.innerText);
+//         totalBalance.innerText = amount + totalBalancePrevious;
+//         return totalBalancePrevious;
+//     }  
 // update balance 
     function updateBalance(id,amount, isAdd){
         const totalBalance = document.getElementById(id);
         const totalBalancePrevious = parseFloat(totalBalance.innerText);
         totalBalance.innerText = amount + totalBalancePrevious;
+        
     if(isAdd == true){
         totalBalance.innerText = amount + totalBalancePrevious;
     }
@@ -29,6 +37,10 @@ function inputTotal(inputId, amount){
     }
     return;
     };
+   
+   
+   
+
 
 
 
@@ -70,6 +82,7 @@ document.getElementById('withraw-button').addEventListener('click', function(){
     // const withrawInput = document.getElementById('withraw-input');
     // const withrawInputText = parseFloat(withrawInput.value);
     const withrawInputText = catchInput('withraw-input');
+   
     if(withrawInputText > 0){
         inputTotal('withraw-total',withrawInputText );
     updateBalance('balance-total',withrawInputText, false);
