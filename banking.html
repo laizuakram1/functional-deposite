@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d',
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="text-5xl text-center mt-14">Let's get Some <span class="font-semibold text-orange-600">Moooooney</span>!!!</h1>
+    </header>
+    <section class="w-3/4 mx-auto mt-10">
+       <div class="grid grid-cols-3 gap-5">
+           <div class="bg-green-300 p-8 rounded text-white">
+               <h4 class="text-2xl font-medium">Deposite</h4>
+               <h2 class="text-4xl font-bold">$<span id="doposite-total">00</span></h2>
+           </div>
+          <div class="bg-violet-300 p-8 rounded text-white">
+               <h4 class="text-2xl font-medium">Withraw</h4>
+               <h2 class="text-4xl font-bold">$<span id="withraw-total">00</span></h2>
+           </div>
+           <div class="bg-pink-300 p-8 rounded text-white">
+            <h4 class="text-2xl font-medium">Balance</h4>
+            <h2 class="text-4xl font-bold">$<span id="balance-total">305</span></h2>
+        </div>
+          
+       </div>
+    </section>
+    <!-- deposite and withdeaw money -->
+    <section class="w-3/4 mx-auto mt-10">
+        <div class="grid grid-cols-2 gap-4">
+            <div class="bg-orange-100 p-6">
+                <h3 class="text-2xl">Please Deposite</h3>
+                <input id="deposite-input" class="my-4 px-2 py-1 border border-2 block rounded" type="text" placeholder="$ Deposite money">
+                <button id="deposite-button" class="bg-red-600 rounded px-4 py-2 text-white font-medium">Deposite</button>
+            </div>
+            <div class="bg-blue-100 p-6">
+                <h3 class="text-2xl">Withraw Money</h3>
+                <input id="withraw-input" class="my-4 px-2 py-1 border border-2 block rounded" type="text" placeholder="$ Withraw money">
+                <button id="withraw-button" class="bg-red-600 rounded px-4 py-2 text-white font-medium">Withraw</button>
+            </div>
+            
+        </div>
+    </section>
+
+   
+
+    <script src="./js/banking.js"></script>
+</body>
+</html>
