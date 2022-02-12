@@ -1,4 +1,4 @@
-
+// get input value 
 function catchInput(num){
     const depositInput = document.getElementById(num);
     const depositAmount = parseFloat(depositInput.value);
@@ -15,7 +15,21 @@ function inputTotal(inputId, amount){
     const depositTotalBalance = amount + depositPrevious;
     depositTotal.innerText = depositTotalBalance;
     return depositTotalBalance;
-}
+};
+// update balance 
+    function updateBalance(id,amount, isAdd){
+        const totalBalance = document.getElementById(id);
+        const totalBalancePrevious = parseFloat(totalBalance.innerText);
+        totalBalance.innerText = amount + totalBalancePrevious;
+    if(isAdd == true){
+        totalBalance.innerText = amount + totalBalancePrevious;
+    }
+    else{
+        totalBalance.innerText = totalBalancePrevious - amount;
+    }
+    return;
+    };
+
 
 
 
@@ -34,10 +48,11 @@ document.getElementById('deposite-button').addEventListener('click', function(){
     // depositTotal.innerText = depositTotalBalance;
      inputTotal('doposite-total', depositAmount);
     // udate balance
-    const totalBalance = document.getElementById('balance-total');
-    const totalBalancePrevious = parseFloat(totalBalance.innerText);
-    const newBalance = depositAmount + totalBalancePrevious;
-    totalBalance.innerText = newBalance;
+    // const totalBalance = document.getElementById('balance-total');
+    // const totalBalancePrevious = parseFloat(totalBalance.innerText);
+    // const newBalance = depositAmount + totalBalancePrevious;
+    // totalBalance.innerText = newBalance;
+    updateBalance('balance-total',depositAmount, true);
 
     
   
@@ -59,10 +74,10 @@ document.getElementById('withraw-button').addEventListener('click', function(){
 inputTotal('withraw-total',withrawInputText );
 
 // update balance after withraw 
-    const totalBalance = document.getElementById('balance-total');
-    const totalBalancePrevious = parseFloat(totalBalance.innerText);
-    const newBalance = totalBalancePrevious - withrawInputText;
-    totalBalance.innerText = newBalance;
-
+    // const totalBalance = document.getElementById('balance-total');
+    // const totalBalancePrevious = parseFloat(totalBalance.innerText);
+    // const newBalance = totalBalancePrevious - withrawInputText;
+    // totalBalance.innerText = newBalance;
+    updateBalance('balance-total',withrawInputText, false);
     
 });
