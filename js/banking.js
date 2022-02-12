@@ -38,21 +38,27 @@ function inputTotal(inputId, amount){
 
 document.getElementById('deposite-button').addEventListener('click', function(){
    
-    const depositAmount = catchInput('deposite-input');
     
+    const depositAmount = catchInput('deposite-input');
+
+    if(depositAmount > 0 ){
+        inputTotal('doposite-total', depositAmount);
+    updateBalance('balance-total',depositAmount, true);
+    }
     // add deposite in deposit total
     // const depositTotal = document.getElementById('doposite-total');
     
     // const depositPrevious = parseFloat(depositTotal.innerText);
     // const depositTotalBalance = depositAmount + depositPrevious;
     // depositTotal.innerText = depositTotalBalance;
-     inputTotal('doposite-total', depositAmount);
+    
+
     // udate balance
     // const totalBalance = document.getElementById('balance-total');
     // const totalBalancePrevious = parseFloat(totalBalance.innerText);
     // const newBalance = depositAmount + totalBalancePrevious;
     // totalBalance.innerText = newBalance;
-    updateBalance('balance-total',depositAmount, true);
+   
 
     
   
@@ -64,6 +70,11 @@ document.getElementById('withraw-button').addEventListener('click', function(){
     // const withrawInput = document.getElementById('withraw-input');
     // const withrawInputText = parseFloat(withrawInput.value);
     const withrawInputText = catchInput('withraw-input');
+    if(withrawInputText > 0){
+        inputTotal('withraw-total',withrawInputText );
+    updateBalance('balance-total',withrawInputText, false);
+    }
+    
 
     // set withraw 
 // const withrawTotal = document.getElementById('withraw-total');
@@ -71,13 +82,13 @@ document.getElementById('withraw-button').addEventListener('click', function(){
 // const newWithrawBalance = withrawInputText + withrawTotalPrevious;
 // withrawTotal.innerText = newWithrawBalance;
 
-inputTotal('withraw-total',withrawInputText );
+
 
 // update balance after withraw 
     // const totalBalance = document.getElementById('balance-total');
     // const totalBalancePrevious = parseFloat(totalBalance.innerText);
     // const newBalance = totalBalancePrevious - withrawInputText;
     // totalBalance.innerText = newBalance;
-    updateBalance('balance-total',withrawInputText, false);
+    
     
 });
