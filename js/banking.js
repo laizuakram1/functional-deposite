@@ -8,11 +8,11 @@ function catchInput(num){
 };
 
 // get input total 
-function inputTotal(inputId, depositAmount){
+function inputTotal(inputId, amount){
     const depositTotal = document.getElementById(inputId);
     
     const depositPrevious = parseFloat(depositTotal.innerText);
-    const depositTotalBalance = depositAmount + depositPrevious;
+    const depositTotalBalance = amount + depositPrevious;
     depositTotal.innerText = depositTotalBalance;
     return depositTotalBalance;
 }
